@@ -13,6 +13,8 @@ import { DepartmentComponent } from './department/department.component';
 import { ShowDepartmentComponent } from './department/show-department/show-department.component';
 import { EditDepartmentComponent } from './department/edit-department/edit-department.component';
 import { AddDepartmentComponent } from './department/add-department/add-department.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AddDepartmentComponent } from './department/add-department/add-departme
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
