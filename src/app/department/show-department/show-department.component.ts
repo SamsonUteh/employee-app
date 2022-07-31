@@ -40,4 +40,9 @@ export class ShowDepartmentComponent implements OnInit {
     console.log(id)
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.listData.filter = filterValue.trim().toLowerCase();
+  }
+
 }
