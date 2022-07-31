@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-department',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDepartmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogbox: MatDialogRef<AddDepartmentComponent>) { }
 
   ngOnInit(): void {
+  }
+
+  onClose(){
+    this.dialogbox.close();
   }
 
 }

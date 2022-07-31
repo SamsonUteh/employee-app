@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -39,8 +41,11 @@ import { MatSortModule } from '@angular/material/sort';
     MatIconModule,
     HttpClientModule,
     MatSortModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddDepartmentComponent]
 })
 export class AppModule { }
