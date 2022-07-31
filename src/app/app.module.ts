@@ -15,6 +15,7 @@ import { EditDepartmentComponent } from './department/edit-department/edit-depar
 import { AddDepartmentComponent } from './department/add-department/add-department.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     MatTableModule,
     MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

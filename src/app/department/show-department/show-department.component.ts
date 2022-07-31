@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { Deparatment } from 'src/app/models/department-model';
+import { Department } from 'src/app/models/department-model';
+import { DepartmentService } from 'src/app/services/department.service';
 
 @Component({
   selector: 'app-show-department',
@@ -9,7 +10,7 @@ import { Deparatment } from 'src/app/models/department-model';
 })
 export class ShowDepartmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private departmentService: DepartmentService) { }
   listData!: MatTableDataSource<any>;
   displayedColumns: string[] = ['options', 'departmentId', 'departmentName']
 
@@ -18,15 +19,20 @@ export class ShowDepartmentComponent implements OnInit {
   }
 
   refreshDepartmentList(){
-    let dummyData = [
-      {departmentId: 1, departmentName: "IT"},
-      {departmentId: 2, departmentName: "Accounts"}
-    ];
+    // let dummyData = [
+    //   {departmentId: 1, departmentName: "IT"},
+    //   {departmentId: 2, departmentName: "Accounts"}
+    // ];
 
-    this.listData = new MatTableDataSource(dummyData);
+    // this.listData = new MatTableDataSource(dummyData);
+
+    this.departmentService.getDepartmentList().subscribe(data => {
+      this.listData = new MatTableDataSource(data);
+      console.log(data);
+    })
   }
 
-  onEdit(dept: Deparatment){
+  onEdit(dept: Department){
     console.log(dept);
   }
 
