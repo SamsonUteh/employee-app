@@ -8,7 +8,9 @@ import { Department } from '../models/department-model';
 })
 export class DepartmentService {
 
+  formData!: Department;
   constructor(private http: HttpClient) { }
+
 
   readonly apiUrl = "http://localhost:49902/api";
   getDepartmentList(): Observable<Department[]> {
